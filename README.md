@@ -1,7 +1,7 @@
 # RarityRadar
 Analyze the card price changes by rarity
 
-## Deadline
+## Deadline & Submissions
 * **May 2nd** - Poster, Notebook, and Code
 * **May 9th** - 2-page Abstract
 
