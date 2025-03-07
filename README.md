@@ -18,7 +18,11 @@ The second dataset organizes the price fluctuation trends of each Pokémon card 
 Using these two data sets appropriately, we can analyze the correlation between rarity and price, or the factors that determine the price of a card, and through this, we can predict future card price movements. Both datasets can be processed easily using JSON.parse(). Also, the first dataset supports RESTful API as well, so we can get data using fetch.
 
 ### Additional Sources
-* https://docs.pokemontcg.io/ (Pokémon TCG Data - documentation)
-* https://api.pokemontcg.io/v2/cards (Pokémon TCG Data - JSON without query)
+* [Pokémon TCG Data - documentation](https://docs.pokemontcg.io/)
+* [Pokémon TCG Data - JSON without query](https://api.pokemontcg.io/v2/cards)
   * Search card: append `?q=name:${query}`
   * Search expansion: append `?q=set.id:${expansion id}` or `?q=set.name:${expansion name}`
+* [Pokémon Card Searcher](https://jihunkimcode.github.io/Pokemon-Card-Searcher/)
+  * This is a webpage I made using Pokémon TCG Data.
+  * Use it for searching card info and peek code if needed (It links to github repo).
+  * Open `DevTools Inspect mode` > `Console` > Enter `cachedData` to see JSON data
