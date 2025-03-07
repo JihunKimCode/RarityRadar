@@ -5,7 +5,7 @@ Analyze the card price changes by rarity
 * **May 2nd** - Poster, Notebook, and Code
 * **May 9th** - 2-page Abstract
 
-## Dataset
+## Datasets
 ### [Pokémon TCG Data](https://github.com/PokemonTCG/pokemon-tcg-data)
 
 The first dataset organizes information on all Pokémon card games released so far by expansion unit. Most of the information comes from https://www.pokemon.com/us/pokemon-tcg/pokemon-cards, and information is added and modified through pull requests from many users. The dataset stores information on the name, type, battle information, rarity, image, and illustrator of the card in JSON format using numbers and characters. You can easily obtain information on each Pokémon card using 164 JSON files.
