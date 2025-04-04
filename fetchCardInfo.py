@@ -2,10 +2,11 @@ import requests
 import pandas as pd
 
 def fetch_pokemon_cards():
-    set_ids = ["swsh1","swsh2","swsh3","swsh4","swsh5"]  # Add more set IDs as needed
+    set_ids = ["swsh1", "swsh2", "swsh3", "swsh4", "swsh5"]
     all_cards = []
     
     for set_id in set_ids:
+        print(f"🟢 Fetching {set_id}...")
         current_page = 1
         has_more_data = True
         url = f"https://api.pokemontcg.io/v2/cards?q=set.id:{set_id}"
@@ -38,8 +39,8 @@ def fetch_pokemon_cards():
     ]
     
     df = pd.DataFrame(card_list)
-    df.to_excel("pokemon_cards.xlsx", index=False)
-    print("Excel file 'pokemon_cards.xlsx' created successfully.")
+    df.to_csv("pokemon_cards.csv", index=False)
+    print("✅ CSV file 'pokemon_cards.csv' created successfully.")
 
 if __name__ == "__main__":
     fetch_pokemon_cards()

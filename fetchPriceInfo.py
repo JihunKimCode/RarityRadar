@@ -4,7 +4,7 @@ import csv
 from collections import defaultdict
 from datetime import datetime
 
-# ✏️ Define folders you want to process
+# Define folders you want to process
 folder_list = [
     "../price-history-master/price-history-master/en/swsh1",
     "../price-history-master/price-history-master/en/swsh2",
@@ -23,7 +23,7 @@ with open(output_file, 'w', newline='') as csvfile:
 
     # Loop through specified folders
     for setname in folder_list:
-        print(f"🟢 Running {os.path.basename(setname)}")
+        print(f"🟢 Running {os.path.basename(setname)}...")
         if not os.path.isdir(setname):
             print(f"⚠️ Skipping {setname}: Not a folder")
             continue

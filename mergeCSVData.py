@@ -27,4 +27,3 @@ merged_df = merged_df[["Set ID", "Number", "Name", "Rarity", "Grade", "Month", "
 merged_df.to_csv("merged_pokemon_data.csv", index=False, sep=",", encoding="utf-8")
 
 print("✅ Merged successfully!")
-print(merged_df.head())
