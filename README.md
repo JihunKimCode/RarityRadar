@@ -1,21 +1,21 @@
 # RarityRadar
 Analyze the card price changes by rarity
 
-## Simple explanation of files
-* Information folder
-  * `pokemon_sets.xlsx` contains information on all Pokémon TCG sets, such as ID, name, series, total number of cards, code, and release date.
-  * `Project Direction.pdf` contains information of project
-* Archive
-  * `fetchCardInfo.py` creates `pokemon_cards.csv`. It fetches *api.pokemontcg.io* to get information on cards in the sets specified in *set_ids* in line 5.
-  * `fetchPriceInfo.py` creates `monthly_averages.csv`. It takes information on cards from the folders specified in *folder_list* in line 8. To run this code, you should git clone [TCGdex Pricing History](https://github.com/tcgdex/price-history) in the proper directory.
-  * `mergeCSVData.py` merges `pokemon_cards.csv` and `monthly_averages.csv` into `merged_pokemon_data.csv`.
-  * `fetchCardInfoAndPrice.py` works same as `fetchCardInfo.py`+`fetchPriceInfo.py`+`mergeCSVData.py`.
-* `fetchCardData.py` works same as `fetchCardInfoAndPrice.py` but it only creates `merged_pokemon_data.csv`.
-* `graph.ipynb`creates various graphs using `merged_pokemon_data.csv`. It has scatterplots, boxplot graphs with line graph, and line graphs.
-
 ## Deadline & Submissions
 * **May 2nd** - Poster, Notebook, and Code
 * **May 9th** - 2-page Abstract
+
+## Simple explanation of files
+* Information folder
+  * `pokemon_sets.xlsx` contains information on all Pokémon TCG sets, such as ID, name, series, number of cards, code, and release date.
+  * `Project Direction.pdf` contains information of project
+* Archive
+  * `fetchCardInfo.py` creates `pokemon_cards.csv`. It fetches *api.pokemontcg.io* to get information on cards in the sets specified in *set_ids*.
+  * `fetchPriceInfo.py` creates `monthly_averages.csv`. It takes information on cards from the folders specified in *folder_list*. To run this code, you should git clone [TCGdex Pricing History](https://github.com/tcgdex/price-history) in the proper directory.
+  * `mergeCSVData.py` merges `pokemon_cards.csv` and `monthly_averages.csv` into `merged_pokemon_data.csv`.
+  * `fetchCardInfoAndPrice.py` works the same as `fetchCardInfo.py`+`fetchPriceInfo.py`+`mergeCSVData.py`.
+* `fetchCardData.py` works the same as `fetchCardInfoAndPrice.py`, but it only creates `merged_pokemon_data.csv`. 
+* `graph.ipynb`creates various graphs using `merged_pokemon_data.csv`. It has scatterplots, boxplot graphs with line graphs, and line graphs.
 
 ## Datasets
 ### [Pokémon TCG Data](https://github.com/PokemonTCG/pokemon-tcg-data)
