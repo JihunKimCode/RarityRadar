@@ -47,8 +47,9 @@ def download_csv(data, filename='decklist.csv'):
 
         for card in data:
             writer.writerow([card['deck_name'], card['name'], card['count'], card['set'], f"${card['price']:.2f}", card['url']])
+    print(f"✅ Card lists saved to {filename}.")
 
-def fetch_decks_from_multiple_urls(urls):
+def fetch_decks(urls):
     all_decks = []
     
     for url in urls:
@@ -65,7 +66,7 @@ deck_urls = [
 ]
 
 # Fetch deck names from multiple pages
-all_decks = fetch_decks_from_multiple_urls(deck_urls)
+all_decks = fetch_decks(deck_urls)
 
 # Store all card data
 all_cards = []
@@ -81,9 +82,7 @@ for i, deck in enumerate(all_decks, start=1):
     deck_cards = parse_decklist_cards(url, deck_name)
     all_cards.extend(deck_cards)
 
-    print(f"🟢 Processing deck {i} of {total_decks}: {deck_name}...")
+    print(f"🟢 Processing deck {i} of {total_decks}: {deck_name}")
 
 # Save all card data to a CSV file
 download_csv(all_cards)
-
-print("✅ Processing complete. Data saved to 'decklist.csv'.")
