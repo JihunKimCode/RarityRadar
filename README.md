@@ -14,8 +14,15 @@ Analyze the card price changes by rarity
   * `fetchPriceInfo.py` creates `monthly_averages.csv`. It takes information on cards from the folders specified in *folder_list*. To run this code, you should git clone [TCGdex Pricing History](https://github.com/tcgdex/price-history) in the proper directory.
   * `mergeCSVData.py` merges `pokemon_cards.csv` and `monthly_averages.csv` into `merged_pokemon_data.csv`.
   * `fetchCardInfoAndPrice.py` works the same as `fetchCardInfo.py`+`fetchPriceInfo.py`+`mergeCSVData.py`.
+* `cardlist scraper.py` scrapes webpage data of [Limitless](https://limitlesstcg.com/decks). Make sure you update *decks_list* properly.
 * `fetchCardData.py` works the same as `fetchCardInfoAndPrice.py`, but it only creates `merged_pokemon_data.csv`. 
 * `graph.ipynb`creates various graphs using `merged_pokemon_data.csv`. It has scatterplots, boxplot graphs with line graphs, and line graphs.
+
+## Expansion Information
+* SWSH1 = Sword & Shield (SSH)
+* SWSH2 = Rebel Clash (RCL)
+* SWSH3 = Darkness Ablaze (DAA)
+* SWSH4 = Vivid Voltage (VIV)
 
 ## Datasets
 ### [Pokémon TCG Data](https://github.com/PokemonTCG/pokemon-tcg-data)
