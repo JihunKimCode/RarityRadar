@@ -1,24 +1,21 @@
 # RarityRadar
-Analyze the card price changes by rarity
+Analyze what impacts on card prices.
 
 ## Deadline & Submissions
 * **May 2nd** - Poster, Notebook, and Code
 * **May 9th** - 2-page Abstract
 
-## Simple explanation of files
-* Information folder
-  * `pokemon_sets.xlsx` contains information on all Pokémon TCG sets, such as ID, name, series, number of cards, code, and release date.
-  * `Project Direction.pdf` contains information of project
-* Archive
-  * `fetchCardInfo.py` creates `pokemon_cards.csv`. It fetches *api.pokemontcg.io* to get information on cards in the sets specified in *set_ids*.
-  * `fetchPriceInfo.py` creates `monthly_averages.csv`. It takes information on cards from the folders specified in *folder_list*. To run this code, you should git clone [TCGdex Pricing History](https://github.com/tcgdex/price-history) in the proper directory.
-  * `mergeCSVData.py` merges `pokemon_cards.csv` and `monthly_averages.csv` into `merged_pokemon_data.csv`.
-  * `fetchCardInfoAndPrice.py` works the same as `fetchCardInfo.py`+`fetchPriceInfo.py`+`mergeCSVData.py`.
+## Brief explanation of codes
+* `fetchCardData.py`
+  * Fetches *api.pokemontcg.io* to get information on cards in the sets specified in *set_ids*.
+  * Takes information on cards from the folders specified in *folder_list*. To run this code, you should git clone [TCGdex Pricing History](https://github.com/tcgdex/price-history) in the proper directory.
+* `graph.ipynb`creates various graphs using `merged_pokemon_data.csv`. It has scatterplots, boxplot graphs with line graphs, and line graphs.
 * Metadecks
   * `cardlist scraper.py` scrapes webpage data of [Limitless](https://limitlesstcg.com/decks). Make sure you update *decks_list* properly.
   * `filterSets.py` filters the decklist.csv with *target_sets*. Outputs are saved in `filtered_cards.csv`.
-* `fetchCardData.py` works the same as `fetchCardInfoAndPrice.py`, but it only creates `merged_pokemon_data.csv`. 
-* `graph.ipynb`creates various graphs using `merged_pokemon_data.csv`. It has scatterplots, boxplot graphs with line graphs, and line graphs.
+* Artists
+  * `fetchCardData_withArtist.py` works the same as `fetchCardData.py`, but it records artist information as well.
+  * `graph_artist.ipynb` creates line graphs using `merged_pokemon_data_with_artist.csv`.
 
 ## Expansion Information
 * SWSH1 = Sword & Shield (SSH)
@@ -44,6 +41,8 @@ Using these two data sets appropriately, we can analyze the correlation between 
   * Search card: append `?q=name:${query}`
   * Search expansion: append `?q=set.id:${expansion id}` or `?q=set.name:${expansion name}`
 * [Pokémon Card Searcher](https://jihunkimcode.github.io/Pokemon-Card-Searcher/)
-  * This is a webpage I made using Pokémon TCG Data.
-  * Use it for searching card info and peek code if needed (It links to github repo).
-  * Open `DevTools Inspect mode` > `Console` > Enter `cachedData` to see JSON data
+  * This webpage makes it easier to search for card information in Pokémon TCG Data.
+  * Open `DevTools Inspect mode` > `Console` > Enter `cachedData` to see JSON data of each cards.
+* [Limitless](https://limitlesstcg.com/decks)
+  * This webpage contains information of meta decks.
+  * Using filters, we can set time range.
