@@ -1,21 +1,29 @@
 # RarityRadar
-Analyze what impacts on card prices.
 
-## Deadline & Submissions
-* **May 2nd** - Poster, Notebook, and Code
-* **May 9th** - 2-page Abstract
+## Motivation
+* Card market prices constantly fluctuate, making it difficult to invest confidently. Due to our mutual interest in card games, we devised a way to solve this problem in the Pokémon TCG.
+* We first determined whether rarity alone contributed to the price. Then, the project was expanded to determine what other factors affected the price.
+
+## Setup Instruction
+1. Download and Install Python 3.8+
+2. Clone the Repository: `git clone https://github.com/JihunKimCode/RarityRadar.git`
+3. Feel free to use VS Code or Jupyter Notebook, depending on your preference.
+4. Make sure the following are installed properly: pandas, matplotlib, seaborn, numpy, beautifulSoup, requests, and PySpark.
+5. If you are not sure which code to run, read the **Brief explanation of codes** below.
 
 ## Brief explanation of codes
 * `fetchCardData.py`
-  * Fetches *api.pokemontcg.io* to get information on cards in the sets specified in *set_ids*.
-  * Takes information on cards from the folders specified in *folder_list*. To run this code, you should git clone [TCGdex Pricing History](https://github.com/tcgdex/price-history) in the proper directory.
-* `graph.ipynb`creates various graphs using `merged_pokemon_data.csv`. It has scatterplots, boxplot graphs with line graphs, and line graphs.
-* Metadecks
-  * `cardlist scraper.py` scrapes webpage data of [Limitless](https://limitlesstcg.com/decks). Make sure you update *decks_list* properly.
-  * `filterSets.py` filters the decklist.csv with *target_sets*. Outputs are saved in `filtered_cards.csv`.
-* Artists
-  * `fetchCardData_withArtist.py` works the same as `fetchCardData.py`, but it records artist information as well.
-  * `graph_artist.ipynb` creates line graphs using `merged_pokemon_data_with_artist.csv`.
+  * Fetches *api.pokemontcg.io* to get information on cards in the sets specified in *set_ids* list (Dataset: Pokémon TCG Data).
+  * Takes information on cards from the folders specified in the *folders* list (Dataset: TCGdex Pricing History).
+  * To run this code, you should git clone [TCGdex Pricing History](https://github.com/tcgdex/price-history) in the proper directory.
+* `graph.ipynb`
+  * Creates various graphs using `merged_pokemon_data.csv` and `Metadecks/filtered_cards.csv`. Make sure you have those CSVs before you run this.
+    * You should run `fetchCardData.py`, `Metadecks/cardlist scraper.py`, and `Metadecks/filterSets.py` to get these CSVs.
+  * Creates heatmaps, scatterplots, boxplots, and linegraphs. Also, it establishes K-means clustering using Spark. 
+* `Metadecks/cardlist scraper.py` scrapes webpage data of [Limitless](https://limitlesstcg.com/decks). Make sure you update *deck_urls* properly.
+* `Metadecks/filterSets.py` filters the `decklist.csv` with *target_sets*.
+* `Artists/fetchCardData_withArtist.py` works the same as `fetchCardData.py`, but it records artist information as well.
+* `Artists/graph_artist.ipynb` creates line graphs using `merged_pokemon_data_with_artist.csv`.
 
 ## Expansion Information
 * SWSH1 = Sword & Shield (SSH)
@@ -26,14 +34,14 @@ Analyze what impacts on card prices.
 ## Datasets
 ### [Pokémon TCG Data](https://github.com/PokemonTCG/pokemon-tcg-data)
 
-The first dataset organizes information on all Pokémon card games released so far by expansion unit. Most of the information comes from https://www.pokemon.com/us/pokemon-tcg/pokemon-cards, and information is added and modified through pull requests from many users. The dataset stores information on the name, type, battle information, rarity, image, and illustrator of the card in JSON format using numbers and characters. You can easily obtain information on each Pokémon card using 164 JSON files.
+This dataset organizes information on all Pokémon card games released so far by expansion unit. Most of the information comes from https://www.pokemon.com/us/pokemon-tcg/pokemon-cards, and information is added and modified through pull requests from many users. The dataset stores information on the name, type, battle information, rarity, image, and illustrator of the card in JSON format using numbers and characters. You can easily obtain information on each Pokémon card using 164 JSON files.
 
 ### [TCGdex Pricing History](https://github.com/tcgdex/price-history)
 
-The second dataset organizes the price fluctuation trends of each Pokémon card by expansion pack unit. Most of the information comes from card trading sites such as TCGPlayer or eBay. The average price, lowest price, and highest price according to card status are stored in JSON format using numbers without decimal points. You can easily understand the price fluctuation trends of the card through 137 folders and the 10 to 100 JSON files in them.
+This dataset organizes the price fluctuation trends of each Pokémon card by expansion pack unit. Most of the information comes from card trading sites such as TCGPlayer or eBay. The average price, lowest price, and highest price according to card status are stored in JSON format using numbers without decimal points. You can easily understand the price fluctuation trends of the card through 137 folders and the 10 to 100 JSON files in them.
 
 ### How to use datasets
-Using these two data sets appropriately, we can analyze the correlation between rarity and price, or the factors that determine the price of a card, and through this, we can predict future card price movements. Both datasets can be processed easily using JSON.parse(). Also, the first dataset supports RESTful API as well, so we can get data using fetch.
+Using these two data sets appropriately, we can analyze the correlation between rarity and price, or the factors that determine the price of a card, and through this, we can predict future card price movements.  Also, the first dataset supports RESTful API as well, so we can get data using fetch.
 
 ### Additional Sources
 * [Pokémon TCG Data - documentation](https://docs.pokemontcg.io/)
