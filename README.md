@@ -7,9 +7,9 @@
 ## Setup Instruction
 1. Download and Install Python 3.8+
 2. Clone the Repository: `git clone https://github.com/JihunKimCode/RarityRadar.git`
-3. Feel free to use VS Code or Jupyter Notebook, depending on your preference.
-4. Make sure the following are installed properly: pandas, matplotlib, seaborn, numpy, beautifulSoup, requests, and PySpark. Try `pip install -r requirements.txt`.
-5. If you are not sure which code to run, read the **Brief explanation of codes** below.
+3. You can use VS Code, Jupyter Notebook, or any editor you're comfortable with.
+4. Make sure the following Python packages are installed: pandas, matplotlib, seaborn, numpy, beautifulSoup, requests, and PySpark. To install all dependencies at once, run: `pip install -r requirements.txt`.
+5. If you are not sure which code to run, refer to the **Brief explanation of codes** section below for guidance.
 
 ## Brief explanation of codes
 * `fetchCardData.py`
