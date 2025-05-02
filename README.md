@@ -8,7 +8,7 @@
 1. Download and Install Python 3.8+
 2. Clone the Repository: `git clone https://github.com/JihunKimCode/RarityRadar.git`
 3. Feel free to use VS Code or Jupyter Notebook, depending on your preference.
-4. Make sure the following are installed properly: pandas, matplotlib, seaborn, numpy, beautifulSoup, requests, and PySpark.
+4. Make sure the following are installed properly: pandas, matplotlib, seaborn, numpy, beautifulSoup, requests, and PySpark. Try `pip install -r requirements.txt`.
 5. If you are not sure which code to run, read the **Brief explanation of codes** below.
 
 ## Brief explanation of codes
@@ -30,6 +30,7 @@
 * SWSH2 = Rebel Clash (RCL)
 * SWSH3 = Darkness Ablaze (DAA)
 * SWSH4 = Vivid Voltage (VIV)
+* SWSH5 = Battle Styles (BST)
 
 ## Datasets
 ### [Pokémon TCG Data](https://github.com/PokemonTCG/pokemon-tcg-data)
