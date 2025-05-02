@@ -24,6 +24,7 @@
 * `Metadecks/filterSets.py` filters the `decklist.csv` with *target_sets*.
 * `Artists/fetchCardData_withArtist.py` works the same as `fetchCardData.py`, but it records artist information as well.
 * `Artists/graph_artist.ipynb` creates line graphs using `merged_pokemon_data_with_artist.csv`.
+  * You should run `Artists/fetchCardData_withArtist.py`to get this CSV.
 
 ## Expansion Information
 * SWSH1 = Sword & Shield (SSH)
